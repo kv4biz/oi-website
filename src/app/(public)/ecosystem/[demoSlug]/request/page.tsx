@@ -82,7 +82,7 @@ export default function RequestDemoPage() {
 
   if (loading) {
     return (
-      <main className="py-12 px-6 max-w-6xl mx-auto">
+      <main className="py-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-4">
           <div>
             <Skeleton className="h-6 w-32 mb-4" />
