@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useMemo } from "react"
-import { cn } from "~/lib/utils"
+import { motion } from "framer-motion";
+import { useMemo } from "react";
+import { cn } from "@/lib/utils";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = useMemo(
@@ -21,7 +21,7 @@ function FloatingPaths({ position }: { position: number }) {
         duration: 20 + (i % 10) * 1.5,
       })),
     [position],
-  )
+  );
 
   return (
     <svg
@@ -31,7 +31,7 @@ function FloatingPaths({ position }: { position: number }) {
       viewBox="0 0 696 316"
       preserveAspectRatio="xMidYMid slice"
     >
-      {paths.map(path => (
+      {paths.map((path) => (
         <motion.path
           key={path.id}
           d={path.d}
@@ -52,17 +52,22 @@ function FloatingPaths({ position }: { position: number }) {
         />
       ))}
     </svg>
-  )
+  );
 }
 
 export interface BackgroundPathsProps {
-  className?: string
-  children?: React.ReactNode
+  className?: string;
+  children?: React.ReactNode;
 }
 
 export function BackgroundPaths({ className, children }: BackgroundPathsProps) {
   return (
-    <div className={cn("fixed inset-0 overflow-hidden bg-neutral-950 text-white", className)}>
+    <div
+      className={cn(
+        "fixed inset-0 overflow-hidden bg-neutral-950 text-white",
+        className,
+      )}
+    >
       {/* Mirrored path sets for symmetry */}
       <FloatingPaths position={1} />
       <FloatingPaths position={-1} />
@@ -73,7 +78,8 @@ export function BackgroundPaths({ className, children }: BackgroundPathsProps) {
         style={{
           width: "min(60vw, 60vh)",
           height: "min(60vw, 60vh)",
-          background: "radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%)",
         }}
       />
 
@@ -87,11 +93,13 @@ export function BackgroundPaths({ className, children }: BackgroundPathsProps) {
       />
 
       {/* Content layer */}
-      {children && <div className="relative z-10 h-full w-full">{children}</div>}
+      {children && (
+        <div className="relative z-10 h-full w-full">{children}</div>
+      )}
     </div>
-  )
+  );
 }
 
 export default function BackgroundPathsDemo() {
-  return <BackgroundPaths />
+  return <BackgroundPaths />;
 }
