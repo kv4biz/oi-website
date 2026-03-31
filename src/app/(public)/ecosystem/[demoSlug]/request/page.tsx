@@ -82,7 +82,7 @@ export default function RequestDemoPage() {
 
   if (loading) {
     return (
-      <main className="py-24 px-6 max-w-6xl mx-auto">
+      <main className="pt-32 pb-24 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-4">
           <div>
             <Skeleton className="h-6 w-32 mb-4" />
@@ -150,7 +150,7 @@ export default function RequestDemoPage() {
   };
 
   return (
-    <main className="py-24 px-6 max-w-6xl mx-auto">
+    <main className="pt-32 pb-24 max-w-6xl mx-auto">
       <StaggerContainer className="mt-4 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-4">
         {/* Left Column - Demo Info */}
         <StaggerItem>
