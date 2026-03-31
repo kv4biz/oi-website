@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+# supabase local files (migrations are tracked separately if needed)
+/supabase
+
+# prisma (schema synced via Supabase, not needed for Vercel)
+/prisma
+
+# markdown files (except README.md)
+*.md
+!README.md
